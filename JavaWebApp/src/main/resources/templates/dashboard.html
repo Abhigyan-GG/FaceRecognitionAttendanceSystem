@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container">
+            <a class="navbar-brand" href="/dashboard">Attendance System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/dashboard">Dashboard</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/attendance-logs">Attendance Logs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/scan-face">Scan Face</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/register-face">Register Face</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <span class="navbar-text me-3">
+                        Organization: <span th:text="${orgId}"></span>
+                    </span>
+                    <a href="/logout" class="btn btn-sm btn-light">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h2>Welcome to Attendance System</h2>
+                        <p>Select an option to continue:</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Attendance Logs</h3>
+                        <p class="card-text">View attendance records by date</p>
+                        <a href="/attendance-logs" class="btn btn-primary">View Logs</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Scan Face</h3>
+                        <p class="card-text">Record attendance by scanning face</p>
+                        <a href="/scan-face" class="btn btn-primary">Scan Face</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <h3 class="card-title">Register Face</h3>
+                        <p class="card-text">Add new person to the system</p>
+                        <a href="/register-face" class="btn btn-primary">Register Face</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
